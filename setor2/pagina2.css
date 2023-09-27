@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+header{
+    display: flex;
+    width: 100vw;
+    height: 20vh;
+    background-color: #2e2e2e;
+}
+
+header > div{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > div > img{
+    width: 85%;
+    height: 90%;
+}
+
+header > menu{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header > menu > a{
+    font-style: none;
+    font-size: calc(0.8em + 0.5vw);
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div#allImg{
+    background-image: url("../imgs/CAHORRO_BONITO.png");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+div#top{
+    height: 60%;
+    display: flex;
+    color: white;
+}
+
+#contato{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contato h1{
+    font-size: calc(2em + 1vw);
+}
+
+#sociais{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#sociais div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sociais div img{
+    width: 50%;
+}
+
+#endereco{
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    width: 100vw;
+    height: 10vh;
+    background-color: #0658C7;
+    font-family: 'Oxygen', sans-serif;
+    display: flex;
+}
+
+.firstText{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondText{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

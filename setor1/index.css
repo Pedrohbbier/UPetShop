@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+header{
+    display: flex;
+    width: 100vw;
+    height: 20vh;
+    background-color: #2e2e2e;
+}
+
+header > div{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > div > img{
+    width: 85%;
+    height: 90%;
+}
+
+header > menu{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header > menu > a{
+    font-style: none;
+    font-size: calc(0.8em + 0.5vw);
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section#p1{
+    display: flex;
+    height: 80vh;
+    width: 100vw;
+}
+
+#textotop{
+    width: 50%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    height: 20%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cachorro{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cachorro img{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+}
+
+#sobrenos{
+    width: 50%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#titleSobreNos{
+    height: 20%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#titleSobreNos h1{
+    font-family: 'Oxygen', sans-serif;
+    font-size: calc(1em + 1.5vw);
+    text-decoration: underline;
+}
+
+#textoSobreNos{
+    height: 70%;
+    font-family: 'Oxygen', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#boxGrey{
+    background-color: grey;
+    width: 50%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+}
+
+#boxGrey p {
+    padding: 5px;
+}
+
+footer{
+    width: 100vw;
+    height: 10vh;
+    background-color: #0658C7;
+    font-family: 'Oxygen', sans-serif;
+    display: flex;
+}
+
+.firstText{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondText{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
