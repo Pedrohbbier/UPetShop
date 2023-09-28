@@ -6,3 +6,148 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    overflow-x: hidden;
+}
+
+header{
+    display: flex;
+    width: 100vw;
+    height: 20vh;
+    background-color: #2e2e2e;
+}
+
+header > div{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > div > img{
+    width: 85%;
+    height: 90%;
+}
+
+header > menu{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header > menu > a{
+    font-style: none;
+    font-size: calc(0.8em + 0.5vw);
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.6s;
+}
+
+header > menu > a:hover{
+    color: blue;
+}
+section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    width: 100vw;
+    height: 10vh;
+    background-color: #0658C7;
+    font-family: 'Oxygen', sans-serif;
+    display: flex;
+}
+
+.firstText{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondText{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+section{
+    height: 80vh;
+    background-image: url(../imgs/CACHORRO_CARRO_PRETOOOOOOO.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+#Title{
+    display: flex;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#Title h1{
+    font-family: 'Oxygen', sans-serif;
+    color: white;
+    font-size: calc(2em + 1vw);
+}
+
+#geral{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 80%;
+}
+
+.box{
+    width: 20%;
+    height: 90%;
+    background-color: white;
+}
+
+.top{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+.bottom{
+    height: 50%;
+    width: 100%;
+}
+
+.bottom h3{
+    margin: auto;
+    text-align: center;
+    font-size: calc(0.8em + 0.7vw);
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.bottom p{
+    text-align: center;
+    padding: 10px;
+    font-family: 'Oxygen', sans-serif;
+}
