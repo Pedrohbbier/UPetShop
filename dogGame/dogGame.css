@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+body {
+  height: 95vh;
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #0658C7;
+  font-family: 'Montserrat', sans-serif;
+  background: white
+}
+h1 {
+  margin-bottom: 0px;
+}
