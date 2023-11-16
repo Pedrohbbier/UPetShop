@@ -6,13 +6,19 @@ highscoreText.innerText = highscore
 let canvas = document.querySelector("#game")
 let context = canvas.getContext("2d")
 let box = 32
-let snake = []
-snake[0] = {
+let dog = []
+let PrimeiraVez = true;
+let audioPeteta = new Audio('./audioPateta.mp3')
+let audioTutorial = new Audio('./audioTutorial.mp3')
+let audioComendo = new Audio('./comendo.mp3')
+
+
+dog[0] = {
   x: 8 * box,
   y: 8 * box
 }
 let direction = "up"
-let apple = {
+let osso = {
   x: Math.floor(Math.random() * 15 + 1) * box,
   y: Math.floor(Math.random() * 15 + 1) * box
 }
@@ -22,22 +28,22 @@ function createBackground() {
   context.fillRect(0, 0, 16 * box, 16 * box)
 }
 
-function createSnake() {
-  for(i = 0; i < snake.length; i ++){
-    context.fillStyle = "darkblue"
-    context.fillRect(snake[i].x, snake[i].y, box, box)
+function createDog() {
+  for(i = 0; i < dog.length; i ++){
+    context.fillStyle = "#c57d56"
+    context.fillRect(dog[i].x, dog[i].y, box, box)
   }
 }
 
-function createApple() {
+function createOsso() {
     let meatEmoji = "🦴";
     context.font = "30px Arial"; // Aumenta o tamanho da fonte
     context.fillStyle = "#e53935"
-    context.fillText(meatEmoji, apple.x, apple.y + box); // Ajusta a posição do emoji
+    context.fillText(meatEmoji, osso.x, osso.y + box); // Ajusta a posição do emoji
   }
   
-  
-  
+
+
 
 document.addEventListener('keydown', update)
 function update(event) {
@@ -52,61 +58,87 @@ function update(event) {
 }
 
 function startGame() {
-  if(snake[0].x > 15 * box){snake[0].x = 0}
-  if(snake[0].x < 0 * box){snake[0].x = 16 * box}
-  if(snake[0].y > 15 * box){snake[0].y = 0}
-  if(snake[0].y < 0 * box){snake[0].y = 16 * box}
+  if(dog[0].x > 15 * box){dog[0].x = 0}
+  if(dog[0].x < 0 * box){dog[0].x = 16 * box}
+  if(dog[0].y > 15 * box){dog[0].y = 0}
+  if(dog[0].y < 0 * box){dog[0].y = 16 * box}
 
-  for(i = 1; i < snake.length; i++){
-    if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+  for(i = 1; i < dog.length; i++){
+  
+    if(dog[0].x == dog[i].x && dog[0].y == dog[i].y){
       clearInterval(game)
-      alert('Fim de jogo!\nClique para jogar novamente.')
+      alert('Você perdeu!\nClique para jogar novamente.')
       location.reload()
+      PrimeiraVez = true;
     }
   }
 
   createBackground()
-  createSnake()
-  createApple()
+  createDog()
+  createOsso()
 
-  let snakeX = snake[0].x
-  let snakeY = snake[0].y
+  let dogX = dog[0].x
+  let dogY = dog[0].y
 
-  if(direction == "right"){snakeX += box}
-  if(direction == "left"){snakeX -= box}
-  if(direction == "up"){snakeY -= box}
-  if(direction == "down"){snakeY += box}
+  if(direction == "right"){dogX += box}
+  if(direction == "left"){dogX -= box}
+  if(direction == "up"){dogY -= box}
+  if(direction == "down"){dogY += box}
   
   
-  if(snakeX != apple.x || snakeY != apple.y){
-    snake.pop()
+  if(dogX != osso.x || dogY != osso.y){
+    dog.pop()
   } else {
-    apple.x = Math.floor(Math.random() * 15 + 1) * box
-    apple.y = Math.floor(Math.random() * 15 + 1) * box
-    for(i = 0; i < snake.length; i++){
-      if(apple.x == snake[i].x && apple.y == snake[i].y){
-        apple.x = Math.floor(Math.random() * 15 + 1) * box
-        apple.y = Math.floor(Math.random() * 15 + 1) * box
+    osso.x = Math.floor(Math.random() * 15 + 1) * box
+    osso.y = Math.floor(Math.random() * 15 + 1) * box
+    for(i = 0; i < dog.length; i++){
+      if(osso.x == dog[i].x && osso.y == dog[i].y){
+        osso.x = Math.floor(Math.random() * 15 + 1) * box
+        osso.y = Math.floor(Math.random() * 15 + 1) * box
         i = 0
       }
     }
+    audioComendo.play()
     score ++
     scoreText.innerText = score
     if(score > highscore){
-      highscore = score
+      highscore = score;
+
+      if (PrimeiraVez) {
+        audioPeteta.play()
+        PrimeiraVez = false;
+      }
+      
     }
     localStorage.setItem("highscore", highscore)
     highscoreText.innerText = highscore
   }
 
-  let snakeHead = {
-    x: snakeX,
-    y: snakeY
+  let dogHead = {
+    x: dogX,
+    y: dogY
   }
-  snake.unshift(snakeHead)
+  dog.unshift(dogHead)
 
 }
 
 
-let game = setInterval(startGame, 100)
+const startBtn = document.querySelector("#startBtn") //começar o jogo
+
+const startTutorial = document.querySelector("#startTutorial") //responsável pela fala do tutorial
+
+const btns = document.querySelector("#btns")
+
+startTutorial.addEventListener("click" , ()=>{ //responsável pela fala do tutorial
+  audioTutorial.play()
+})
+
+
+startBtn.addEventListener("click" , ()=>{ //começar o jogo
+  canvas.style.display = 'block'
+  let game = setInterval(startGame, 100)
+  btns.style.display = 'none'
+  startBtn.style.display = 'none'
+  startTutorial.style.display = 'none'
+})
 

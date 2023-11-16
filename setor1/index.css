@@ -144,3 +144,27 @@ footer{
     align-items: center;
     justify-content: center;
 }
+
+#game{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game > a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+    background-color: #064db1;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    border-width: 1.5px;
+    border-color: rgba(0, 0, 0, 0.791);
+    border-style: solid;
+}
