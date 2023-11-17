@@ -37,7 +37,7 @@ function createDog() {
 
 function createOsso() {
     let meatEmoji = "🦴";
-    context.font = "30px Arial"; // Aumenta o tamanho da fonte
+    context.font = "30px Arial"; // Aumenta o tamanho do emoji
     context.fillStyle = "#e53935"
     context.fillText(meatEmoji, osso.x, osso.y + box); // Ajusta a posição do emoji
   }
