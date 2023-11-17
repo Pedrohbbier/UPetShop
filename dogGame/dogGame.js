@@ -129,6 +129,8 @@ const startTutorial = document.querySelector("#startTutorial") //responsável pe
 
 const btns = document.querySelector("#btns")
 
+const voltarBtn = document.querySelector("#voltarBtn")
+
 startTutorial.addEventListener("click" , ()=>{ //responsável pela fala do tutorial
   audioTutorial.play()
 })
@@ -140,5 +142,9 @@ startBtn.addEventListener("click" , ()=>{ //começar o jogo
   btns.style.display = 'none'
   startBtn.style.display = 'none'
   startTutorial.style.display = 'none'
+  voltarBtn.style.display = "none"
 })
 
+function voltarPg(){
+  window.location.href = "../setor1/index.html";
+}
